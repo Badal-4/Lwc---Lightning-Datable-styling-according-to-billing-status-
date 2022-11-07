@@ -1,0 +1,7 @@
+public class lwcController
+{
+    @AuraEnabled(cacheable=true)
+    public static List<Account> getAcc() {
+        return [SELECT Id, Name, Bill_Status__c, Industry, Phone from Account where Bill_Status__c != null];
+    }
+}
